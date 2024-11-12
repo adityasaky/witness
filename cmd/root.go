@@ -46,6 +46,7 @@ func New() *cobra.Command {
 	ro.AddFlags(cmd)
 	cmd.AddCommand(SignCmd())
 	cmd.AddCommand(VerifyCmd())
+	cmd.AddCommand(NewVerifyAVCmd())
 	cmd.AddCommand(RunCmd())
 	cmd.AddCommand(CompletionCmd())
 	cmd.AddCommand(versionCmd())

@@ -11,6 +11,9 @@ clean: ## Clean the binary directory
 build: ## Build the binary
 	CGO_ENABLED=0 go build $(BUILDFLAGS) -o $(BINDIR)/$(BINNAME) ./main.go
 
+install:
+	CGO_ENABLED=0 go install github.com/in-toto/witness
+
 build-goreleaser: ## Build the binary using goreleaser
 	goreleaser build --snapshot --clean
 

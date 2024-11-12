@@ -1,0 +1,102 @@
+expires: "2100-10-10T12:23:22Z"
+functionaries:
+  05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f:
+    keyType: "ed25519"
+    scheme: "ed25519"
+    keyIDHashAlgorithms:
+      - "sha256"
+      - "sha512"
+    keyVal:
+      public: "75b3e1b64f7d315ee88f790562f0b0c91c813220523048f3bb81e901414855f6"
+    keyID: "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+steps:
+  - name: "fmt"
+    expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
+    functionaries:
+      - "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+    expectedAttestors:
+      - attestorType: "https://witness.dev/attestations/environment/v0.1"
+      - attestorType: "https://witness.dev/attestations/git/v0.1"
+      - attestorType: "https://witness.dev/attestations/material/v0.1"
+      - attestorType: "https://witness.dev/attestations/command-run/v0.1"
+      - attestorType: "https://witness.dev/attestations/product/v0.1"
+
+  - name: "vet"
+    expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
+    functionaries:
+      - "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+    expectedAttestors:
+      - attestorType: "https://witness.dev/attestations/environment/v0.1"
+      - attestorType: "https://witness.dev/attestations/git/v0.1"
+      - attestorType: "https://witness.dev/attestations/material/v0.1"
+      - attestorType: "https://witness.dev/attestations/command-run/v0.1"
+      - attestorType: "https://witness.dev/attestations/product/v0.1"
+
+  - name: "lint"
+    expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
+    functionaries:
+      - "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+    expectedAttestors:
+      - attestorType: "https://witness.dev/attestations/environment/v0.1"
+      - attestorType: "https://witness.dev/attestations/git/v0.1"
+      - attestorType: "https://witness.dev/attestations/material/v0.1"
+      - attestorType: "https://witness.dev/attestations/command-run/v0.1"
+        expectedAttributes:
+          - rule: "attestation.cmd == ['/bin/sh', '-c', 'hadolint -f sarif Dockerfile > hadolint.sarif']"
+      - attestorType: "https://witness.dev/attestations/product/v0.1"
+
+  - name: "unit-test"
+    expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
+    functionaries:
+      - "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+    expectedAttestors:
+      - attestorType: "https://witness.dev/attestations/environment/v0.1"
+      - attestorType: "https://witness.dev/attestations/git/v0.1"
+      - attestorType: "https://witness.dev/attestations/material/v0.1"
+      - attestorType: "https://witness.dev/attestations/command-run/v0.1"
+      - attestorType: "https://witness.dev/attestations/product/v0.1"
+
+  - name: "sast"
+    expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
+    functionaries:
+      - "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+    expectedAttestors:
+      - attestorType: "https://witness.dev/attestations/environment/v0.1"
+      - attestorType: "https://witness.dev/attestations/git/v0.1"
+      - attestorType: "https://witness.dev/attestations/material/v0.1"
+      - attestorType: "https://witness.dev/attestations/command-run/v0.1"
+      - attestorType: "https://witness.dev/attestations/product/v0.1"
+
+  - name: "build-image"
+    expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
+    functionaries:
+      - "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+    expectedAttestors:
+      - attestorType: "https://witness.dev/attestations/environment/v0.1"
+      - attestorType: "https://witness.dev/attestations/git/v0.1"
+      - attestorType: "https://witness.dev/attestations/material/v0.1"
+      - attestorType: "https://witness.dev/attestations/command-run/v0.1"
+      - attestorType: "https://slsa.dev/provenance/v1.0"
+      - attestorType: "https://witness.dev/attestations/product/v0.1"
+
+  - name: "generate-sbom"
+    expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
+    functionaries:
+      - "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+    expectedAttestors:
+      - attestorType: "https://witness.dev/attestations/environment/v0.1"
+      - attestorType: "https://witness.dev/attestations/git/v0.1"
+      - attestorType: "https://witness.dev/attestations/material/v0.1"
+      - attestorType: "https://witness.dev/attestations/command-run/v0.1"
+      - attestorType: "https://witness.dev/attestations/product/v0.1"
+
+  - name: "secret-scan"
+    expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
+    functionaries:
+      - "05dcc20c616e2139a931aa31df8e32ec9a0c5e62d2774fa5a2d3e6a8b6ac888f"
+    expectedAttestors:
+      - attestorType: "https://witness.dev/attestations/environment/v0.1"
+      - attestorType: "https://witness.dev/attestations/git/v0.1"
+      - attestorType: "https://witness.dev/attestations/material/v0.1"
+      - attestorType: "https://witness.dev/attestations/command-run/v0.1"
+      - attestorType: "https://witness.dev/attestations/product/v0.1"
