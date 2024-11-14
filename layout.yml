@@ -31,6 +31,10 @@ steps:
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
+    expectedProducts:
+      - "MATCH https://witness.dev/attestations/git/v0.1/commithash* WITH products FROM fmt"
+      - "ALLOW https://witness.dev/attestations/*"
+      - "DISALLOW *"
 
   - name: "lint"
     expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
@@ -44,6 +48,10 @@ steps:
         expectedAttributes:
           - rule: "attestation.cmd == ['/bin/sh', '-c', 'hadolint -f sarif Dockerfile > hadolint.sarif']"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
+    expectedProducts:
+      - "MATCH https://witness.dev/attestations/git/v0.1/commithash* WITH products FROM fmt"
+      - "ALLOW https://witness.dev/attestations/*"
+      - "DISALLOW *"
 
   - name: "unit-test"
     expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
@@ -55,6 +63,10 @@ steps:
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
+    expectedProducts:
+      - "MATCH https://witness.dev/attestations/git/v0.1/commithash* WITH products FROM fmt"
+      - "ALLOW https://witness.dev/attestations/*"
+      - "DISALLOW *"
 
   - name: "sast"
     expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
@@ -66,6 +78,10 @@ steps:
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
+    expectedProducts:
+      - "MATCH https://witness.dev/attestations/git/v0.1/commithash* WITH products FROM fmt"
+      - "ALLOW https://witness.dev/attestations/*"
+      - "DISALLOW *"
 
   - name: "build-image"
     expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
@@ -78,6 +94,10 @@ steps:
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://slsa.dev/provenance/v1.0"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
+    expectedProducts:
+      - "MATCH https://witness.dev/attestations/git/v0.1/commithash* WITH products FROM fmt"
+      - "ALLOW https://witness.dev/attestations/*"
+      - "DISALLOW *"
 
   - name: "generate-sbom"
     expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
@@ -89,6 +109,11 @@ steps:
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
+    expectedProducts:
+      - "CREATE https://cyclonedx.org/bom/file:sbom.cdx.json"
+      - "MATCH https://witness.dev/attestations/git/v0.1/commithash* WITH products FROM fmt"
+      - "ALLOW https://witness.dev/attestations/*"
+      - "DISALLOW *"
 
   - name: "secret-scan"
     expectedPredicateType: "https://witness.testifysec.com/attestation-collection/v0.1"
@@ -100,3 +125,7 @@ steps:
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
+    expectedProducts:
+      - "MATCH https://witness.dev/attestations/git/v0.1/commithash* WITH products FROM fmt"
+      - "ALLOW https://witness.dev/attestations/*"
+      - "DISALLOW *"
