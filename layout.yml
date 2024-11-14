@@ -18,7 +18,7 @@ steps:
       - attestorType: "https://witness.dev/attestations/environment/v0.1"
       - attestorType: "https://witness.dev/attestations/git/v0.1"
         expectedAttributes:
-          - rule: "size(attestation.status) == 0"
+          - rule: "!has(attestation.status)"
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
@@ -30,6 +30,8 @@ steps:
     expectedAttestors:
       - attestorType: "https://witness.dev/attestations/environment/v0.1"
       - attestorType: "https://witness.dev/attestations/git/v0.1"
+        expectedAttributes:
+          - rule: "!has(attestation.status)"
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
@@ -45,6 +47,8 @@ steps:
     expectedAttestors:
       - attestorType: "https://witness.dev/attestations/environment/v0.1"
       - attestorType: "https://witness.dev/attestations/git/v0.1"
+        expectedAttributes:
+          - rule: "!has(attestation.status)"
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
         expectedAttributes:
@@ -62,6 +66,8 @@ steps:
     expectedAttestors:
       - attestorType: "https://witness.dev/attestations/environment/v0.1"
       - attestorType: "https://witness.dev/attestations/git/v0.1"
+        expectedAttributes:
+          - rule: "!has(attestation.status)"
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
@@ -77,6 +83,8 @@ steps:
     expectedAttestors:
       - attestorType: "https://witness.dev/attestations/environment/v0.1"
       - attestorType: "https://witness.dev/attestations/git/v0.1"
+        expectedAttributes:
+          - rule: "!has(attestation.status)"
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
@@ -92,6 +100,8 @@ steps:
     expectedAttestors:
       - attestorType: "https://witness.dev/attestations/environment/v0.1"
       - attestorType: "https://witness.dev/attestations/git/v0.1"
+        expectedAttributes:
+          - rule: "!has(attestation.status)"
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://slsa.dev/provenance/v1.0"
@@ -108,6 +118,8 @@ steps:
     expectedAttestors:
       - attestorType: "https://witness.dev/attestations/environment/v0.1"
       - attestorType: "https://witness.dev/attestations/git/v0.1"
+        expectedAttributes:
+          - rule: "!has(attestation.status)"
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
@@ -124,6 +136,8 @@ steps:
     expectedAttestors:
       - attestorType: "https://witness.dev/attestations/environment/v0.1"
       - attestorType: "https://witness.dev/attestations/git/v0.1"
+        expectedAttributes:
+          - rule: "!has(attestation.status)"
       - attestorType: "https://witness.dev/attestations/material/v0.1"
       - attestorType: "https://witness.dev/attestations/command-run/v0.1"
       - attestorType: "https://witness.dev/attestations/product/v0.1"
