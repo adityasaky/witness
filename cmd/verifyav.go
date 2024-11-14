@@ -82,10 +82,10 @@ func (vav *VerifyAV) Run(cmd *cobra.Command, args []string) error {
 		}
 
 		if len(envelope) == 0 {
-			return fmt.Errorf("attestation not found for step '%s' in '%s'", stepName, vav.pipelineRun)
+			return fmt.Errorf("attestation not found for step '%s' of '%s' in Archivista", stepName, vav.pipelineRun)
 		}
 
-		log.Infof("Found attestation for step '%s' in '%s'", stepName, vav.pipelineRun)
+		log.Infof("Found attestation for step '%s' of '%s' in Archivista", stepName, vav.pipelineRun)
 		envelopes = append(envelopes, envelope...)
 	}
 
